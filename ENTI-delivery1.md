@@ -1,8 +1,8 @@
-<img src="docs/images/unity-wide.png" align="middle" width="3000"/>
+# Input Output. Delivery One
 
 <img src="docs/images/image-banner.png" align="middle" width="3000"/>
 
-# Introduction 
+## Introduction 
 
 This first delivery of the input/output course at ENTI delivered during Spring 2019 is focused on showing you understood the basic notions of modern machine learning, and how to use such techniques as they are available in Unity. Your goal is to analyze  one of the basic examples, dissect it, understand it, and apply the same strategy to a different problem.
 
