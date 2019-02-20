@@ -59,6 +59,6 @@ The grades will follow these guidelines:
 * The files should be organized preserving the structure already set up in the repository
 * Your contributions should not collide with the ones from other development teams
 
-**All the previous requirements should be satisfied for the submission to be evaluated.**
+**All the extra requirements should be satisfied for the submission to be evaluated.**
 
 
