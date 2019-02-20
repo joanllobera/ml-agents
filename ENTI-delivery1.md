@@ -11,11 +11,11 @@ This first delivery of the input/output course at ENTI delivered during Spring 2
 The assets to explore and use are the ones available at the ml-agents repository, which for this course I have forked [here]( https://github.com/joanllobera/ml-agents.git). It is also possible to add examples from the Marathon environmetns, which can be found [here](https://github.com/Unity-Technologies/marathon-envs)
  
  
- ![MarathonEnvs](images/MarathonEnvsBanner.gif)
-
+ <img src="https://github.com/Unity-Technologies/marathon-envs/blob/master/images/MarathonEnvsBanner.gif" align="middle" width="3000"/>
+ 
 ## Delivery format 
 
-In delivery you must deliver a notebook reflecting the exercises outlined below. You will also be asked to go through your notebook in class, explaining to the class what you did, and how to reproduce your results.
+You must deliver a notebook reflecting the exercises outlined below. You will also be asked to go through your notebook in class, explaining to the rest  of the class what you did, and how to reproduce your results.
 
 A complementary scene or example implemented may also be included in the delivery.
 
@@ -24,19 +24,19 @@ A complementary scene or example implemented may also be included in the deliver
 ## Exercises 
 
 The notebook will have the following sections:
-1. Introduction
+1. **Introduction**
 A short paragraph explaining what is the aim of this notebook, and a specification of the team involved (at least: picture, name, surname, email)
 
-2. Case analysis 
+2. **Case analysis** 
 You explain clearly how an example that is already implemented works. This includes at least an explanation of:
  a) what are the rewards, 
  b) what are the states, 
  c) how is, in general, the training implemented 
 
-3. Performance analysis 
+3. **Performance analysis** 
 You do a performance analysis of the training using TensorBoard, exploring what parameters are most critical to a) make it work, b) produce smooth results, and c) train fast. In your analysis you should include a combination of parameters that does not work, and some that do work. You should also show some understanding of the role of the parameters, and try to explain why something works or doesn't.
 
-4. New case proposal 
+4. **New case proposal** 
 Taking as basis the example analysed, you propose a different task for the same training procedure, or a very similar one. You explain how to train the new use case, nad how the setup, rewards, states or training change, compared to the example. 
 
 A bonus would be to provide a (rough) implementation of this new use case. 
@@ -53,12 +53,12 @@ The grades will follow these guidelines:
 ## Extra requirements
 
 * The notebook and code that you propose should work straight away from downloading the repository. 
-* Your username should reflect your name+surname
-* Your delivery should have a tag labelled `ENTI_IO2019_D1_GXX`, where *XX* stand for your group number
+* Your username should reflect your name+surname, and all your commits should be associated with your ENTI email
+* Your delivery should have a tag labelled `ENTI_IO2019_D1_GXX`, where *XX* stands for your group number
 * Your repository contributions should follow the git flow conventions. You should work on one or several  separate branches, and perform a merge request once satisfied with your contribution. The branch to which you will want to merge is called `develop-ENTI-delivery1`
 * The files should be organized preserving the structure already set up in the repository
 * Your contributions should not collide with the ones from other development teams
 
-All the previous requirements should be satisfied for the submission to be evaluated. 
+**All the previous requirements should be satisfied for the submission to be evaluated.**
 
 
