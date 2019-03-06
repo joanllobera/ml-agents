@@ -38,10 +38,36 @@ public class BouncerAgent : Agent {
         float z = vectorAction[2];
         rb.AddForce( new Vector3(x, y+1, z) * strength);
 
+        #region Rewards
+
+        #region OriginalReward
+        /*
         AddReward(-0.05f * (
             vectorAction[0] * vectorAction[0] +
             vectorAction[1] * vectorAction[1] +
             vectorAction[2] * vectorAction[2]) / 3f);
+        */
+        #endregion
+
+        #region DistanceReward
+        ///*
+        AddReward(-0.05f * Vector3.Distance(gameObject.transform.localPosition, banana.transform.localPosition));
+        //*/
+        #endregion
+
+        #region DistanceReward
+        /*
+        AddReward(-0.5f * Vector3.Distance(gameObject.transform.localPosition, banana.transform.localPosition));
+        */
+        #endregion
+
+        #region SimpleReward
+        /*
+        AddReward(-0.05f);
+        */
+        #endregion
+
+        #endregion
 
         lookDir = new Vector3(x, y, z);
     }
