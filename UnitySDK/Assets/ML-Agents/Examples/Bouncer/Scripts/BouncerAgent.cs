@@ -50,9 +50,9 @@ public class BouncerAgent : Agent {
         #endregion
 
         #region DistanceReward
-        ///*
+        /*
         AddReward(-0.05f * Vector3.Distance(gameObject.transform.localPosition, banana.transform.localPosition));
-        //*/
+        */
         #endregion
 
         #region InverseDistanceReward
@@ -62,9 +62,9 @@ public class BouncerAgent : Agent {
         #endregion
 
         #region SimpleReward
-        /*
+        ///*
         AddReward(-0.05f);
-        */
+        //*/
         #endregion
 
         #region DistancePerBasicReward
