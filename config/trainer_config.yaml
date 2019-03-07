@@ -30,7 +30,7 @@ BananaLearning:
 
 BouncerLearning:
     normalize: true
-    max_steps: 5.0e5
+    max_steps: 50e3
     num_layers: 2
     hidden_units: 64
 
