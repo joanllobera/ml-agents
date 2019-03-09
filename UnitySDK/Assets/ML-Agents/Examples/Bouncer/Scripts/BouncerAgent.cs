@@ -41,17 +41,17 @@ public class BouncerAgent : Agent {
         #region Rewards
 
         #region OriginalReward
-        /*
+        ///*
         AddReward(-0.05f * (
             vectorAction[0] * vectorAction[0] +
             vectorAction[1] * vectorAction[1] +
             vectorAction[2] * vectorAction[2]) / 3f);
-        */
+        //*/
         #endregion
 
         #region DistanceReward
         ///*
-        AddReward(-0.05f * Vector3.Distance(gameObject.transform.localPosition, banana.transform.localPosition));
+        //AddReward(-0.05f * Vector3.Distance(gameObject.transform.localPosition, banana.transform.localPosition));
         //*/
         #endregion
 
