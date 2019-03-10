@@ -8004,10 +8004,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broadcastHub:
     broadcastingBrains:
-    - {fileID: 11400000, guid: e07d20b2583f9664cb2dd92b7bce08e6, type: 2}
+    - {fileID: 11400000, guid: 96f156f9cbc2c3149bca12de5c42e49b, type: 2}
     _brainsToControl:
-    - {fileID: 11400000, guid: e07d20b2583f9664cb2dd92b7bce08e6, type: 2}
-  maxSteps: 50000
+    - {fileID: 11400000, guid: 27d018b8dfe4ef244afc496c1a900975, type: 2}
+    - {fileID: 11400000, guid: 96f156f9cbc2c3149bca12de5c42e49b, type: 2}
+  maxSteps: 200000
   trainingConfiguration:
     width: 400
     height: 300
