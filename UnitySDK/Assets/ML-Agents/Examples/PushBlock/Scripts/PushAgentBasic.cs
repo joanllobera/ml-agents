@@ -191,6 +191,7 @@ public class PushAgentBasic : Agent
         // Penalty given each step to encourage agent to finish task quickly.
         AddReward(-1f / agentParameters.maxStep);
 
+        /*
         distance = Vector3.Distance(block.transform.position, transform.position);  //Distance between the agent and the block
 
         if(distance < 3.0f)
@@ -204,7 +205,7 @@ public class PushAgentBasic : Agent
         {
             AddReward(-0.01f);          //It needs to be small, but not as the distance reward
         }
-
+        */
     }
 
     /// <summary>
