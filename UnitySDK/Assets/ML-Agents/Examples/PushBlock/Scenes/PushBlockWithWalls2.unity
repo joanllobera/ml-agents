@@ -4872,7 +4872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009000883}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 20, z: -15}
+  m_LocalPosition: {x: 0, y: 32.39, z: -22.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8005,10 +8005,10 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: 96f156f9cbc2c3149bca12de5c42e49b, type: 2}
-    _brainsToControl:
     - {fileID: 11400000, guid: 27d018b8dfe4ef244afc496c1a900975, type: 2}
+    _brainsToControl:
     - {fileID: 11400000, guid: 96f156f9cbc2c3149bca12de5c42e49b, type: 2}
-  maxSteps: 200000
+  maxSteps: 20000
   trainingConfiguration:
     width: 400
     height: 300
@@ -9284,6 +9284,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114505490781873732, guid: 03bcc81e249714a22bb411dddcc5d15e,
+        type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 11400000, guid: 27d018b8dfe4ef244afc496c1a900975,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03bcc81e249714a22bb411dddcc5d15e, type: 3}
 --- !u!1 &1857978097
