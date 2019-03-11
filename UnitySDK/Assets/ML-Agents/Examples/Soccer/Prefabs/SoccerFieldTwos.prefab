@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2688ef4a36349f9aa010020c32d198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 341928d69c5dedf49bf40ac9e09a9089, type: 2}
+  brain: {fileID: 11400000, guid: 29ed78b3e8fef4340b3a1f6954b88f18, type: 2}
   agentParameters:
     agentCameras: []
     maxStep: 3000
@@ -4163,7 +4163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2688ef4a36349f9aa010020c32d198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: b2517311b0305b544bb060631621b122, type: 2}
+  brain: {fileID: 11400000, guid: 090fa5a8588f5433bb7f878e6f5ac954, type: 2}
   agentParameters:
     agentCameras: []
     maxStep: 3000
