@@ -29,7 +29,7 @@ BouncerLearning:
     trainer: online_bc
     max_steps: 10000
     summary_freq: 10
-    brain_to_imitate: BouncerPlayer
+    brain_to_imitate: OurBouncerLearning
     batch_size: 16
     batches_per_epoch: 1
     num_layers: 1
