@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 88641156110e2064c9b5d6039f3a9a41
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: brick_pile
+    100002: brick_pile_messy
+    100004: brick_single
+    100006: brick_wall_column_big
+    100008: brick_wall_column_thin
+    100010: brick_wall_large
+    100012: brick_wall_large_1_column
+    100014: brick_wall_large_2_columns
+    100016: brick_wall_large_corner
+    100018: brick_wall_large_top
+    100020: brick_wall_large_without_top
+    100022: brick_wall_medium
+    100024: brick_wall_medium_1_column
+    100026: brick_wall_medium_2_columns
+    100028: brick_wall_medium_corner
+    100030: brick_wall_medium_top
+    100032: brick_wall_medium_without_top
+    100034: brick_wall_small
+    100036: brick_wall_small_1_column
+    100038: brick_wall_small_2_columns
+    100040: brick_wall_small_corner
+    100042: brick_wall_small_top
+    100044: brick_wall_small_without_top
+    100046: //RootNode
+    400000: brick_pile
+    400002: brick_pile_messy
+    400004: brick_single
+    400006: brick_wall_column_big
+    400008: brick_wall_column_thin
+    400010: brick_wall_large
+    400012: brick_wall_large_1_column
+    400014: brick_wall_large_2_columns
+    400016: brick_wall_large_corner
+    400018: brick_wall_large_top
+    400020: brick_wall_large_without_top
+    400022: brick_wall_medium
+    400024: brick_wall_medium_1_column
+    400026: brick_wall_medium_2_columns
+    400028: brick_wall_medium_corner
+    400030: brick_wall_medium_top
+    400032: brick_wall_medium_without_top
+    400034: brick_wall_small
+    400036: brick_wall_small_1_column
+    400038: brick_wall_small_2_columns
+    400040: brick_wall_small_corner
+    400042: brick_wall_small_top
+    400044: brick_wall_small_without_top
+    400046: //RootNode
+    2100000: brick
+    2100002: proxy
+    2100004: column
+    2100006: cement
+    2100008: wall
+    2300000: brick_pile
+    2300002: brick_pile_messy
+    2300004: brick_single
+    2300006: brick_wall_column_big
+    2300008: brick_wall_column_thin
+    2300010: brick_wall_large
+    2300012: brick_wall_large_1_column
+    2300014: brick_wall_large_2_columns
+    2300016: brick_wall_large_corner
+    2300018: brick_wall_large_top
+    2300020: brick_wall_large_without_top
+    2300022: brick_wall_medium
+    2300024: brick_wall_medium_1_column
+    2300026: brick_wall_medium_2_columns
+    2300028: brick_wall_medium_corner
+    2300030: brick_wall_medium_top
+    2300032: brick_wall_medium_without_top
+    2300034: brick_wall_small
+    2300036: brick_wall_small_1_column
+    2300038: brick_wall_small_2_columns
+    2300040: brick_wall_small_corner
+    2300042: brick_wall_small_top
+    2300044: brick_wall_small_without_top
+    3300000: brick_pile
+    3300002: brick_pile_messy
+    3300004: brick_single
+    3300006: brick_wall_column_big
+    3300008: brick_wall_column_thin
+    3300010: brick_wall_large
+    3300012: brick_wall_large_1_column
+    3300014: brick_wall_large_2_columns
+    3300016: brick_wall_large_corner
+    3300018: brick_wall_large_top
+    3300020: brick_wall_large_without_top
+    3300022: brick_wall_medium
+    3300024: brick_wall_medium_1_column
+    3300026: brick_wall_medium_2_columns
+    3300028: brick_wall_medium_corner
+    3300030: brick_wall_medium_top
+    3300032: brick_wall_medium_without_top
+    3300034: brick_wall_small
+    3300036: brick_wall_small_1_column
+    3300038: brick_wall_small_2_columns
+    3300040: brick_wall_small_corner
+    3300042: brick_wall_small_top
+    3300044: brick_wall_small_without_top
+    4300000: brick_pile
+    4300002: brick_pile_messy
+    4300004: brick_single
+    4300006: brick_wall_column_big
+    4300008: brick_wall_column_thin
+    4300010: brick_wall_large
+    4300012: brick_wall_large_1_column
+    4300014: brick_wall_large_2_columns
+    4300016: brick_wall_large_corner
+    4300018: brick_wall_large_top
+    4300020: brick_wall_large_without_top
+    4300022: brick_wall_medium
+    4300024: brick_wall_medium_1_column
+    4300026: brick_wall_medium_2_columns
+    4300028: brick_wall_medium_corner
+    4300030: brick_wall_medium_top
+    4300032: brick_wall_medium_without_top
+    4300034: brick_wall_small
+    4300036: brick_wall_small_1_column
+    4300038: brick_wall_small_2_columns
+    4300040: brick_wall_small_corner
+    4300042: brick_wall_small_top
+    4300044: brick_wall_small_without_top
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

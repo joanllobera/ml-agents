@@ -50,6 +50,12 @@ public class PushAgentBasic : Agent
     /// </summary>
     Renderer groundRenderer;
 
+    private float distance;
+
+    private float distanceWithWalls;
+
+    public GameObject walls;
+
     void Awake()
     {
         academy = FindObjectOfType<PushBlockAcademy>(); //cache the academy
@@ -115,7 +121,7 @@ public class PushAgentBasic : Agent
     public void IScoredAGoal()
     {
         // We use a reward of 5.
-        AddReward(5f);
+        AddReward(5.0f);
 
         // By marking an agent as done AgentReset() will be called automatically.
         Done();
@@ -178,11 +184,28 @@ public class PushAgentBasic : Agent
     /// </summary>
 	public override void AgentAction(float[] vectorAction, string textAction)
     {
+        
         // Move the agent using the action.
         MoveAgent(vectorAction);
 
         // Penalty given each step to encourage agent to finish task quickly.
-        AddReward(-1f / agentParameters.maxStep);
+        AddReward(-1.0f / agentParameters.maxStep);
+
+        
+        distance = Vector3.Distance(block.transform.position, transform.position);  //Distance between the agent and the block
+
+        if(distance < 3.0f)
+        {
+            AddReward(0.001f);          //It needs to be very small
+        }
+
+        distanceWithWalls = Vector3.Distance(block.transform.position, walls.transform.position);   //Distance between the walls and the block
+
+        if (distanceWithWalls < 1.0f)
+        {
+            AddReward(-0.01f);          //It needs to be small, but not as the distance reward
+        }
+        
     }
 
     /// <summary>
@@ -198,6 +221,8 @@ public class PushAgentBasic : Agent
 
         // Reset block angularVelocity back to zero.
         blockRB.angularVelocity = Vector3.zero;
+
+
     }
 
 
