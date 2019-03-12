@@ -26,6 +26,8 @@ TagManager:
   - pyramid
   - switchOn
   - stone
+  - walkableSurface
+  - enemy
   layers:
   - Default
   - TransparentFX

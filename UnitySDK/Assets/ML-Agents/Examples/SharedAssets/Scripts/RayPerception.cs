@@ -37,8 +37,8 @@ namespace MLAgents
                 endPosition.y = endOffset;
                 if (Application.isEditor)
                 {
-                    Debug.DrawRay(transform.position + new Vector3(0f, startOffset, 0f),
-                        endPosition, Color.black, 0.01f, true);
+                    //Debug.DrawRay(transform.position + new Vector3(0f, startOffset, 0f),
+                        //endPosition, Color.black, 0.01f, true);
                 }
 
                 float[] subList = new float[detectableObjects.Length + 2];
@@ -50,6 +50,13 @@ namespace MLAgents
                     {
                         if (hit.collider.gameObject.CompareTag(detectableObjects[i]))
                         {
+                            Debug.DrawLine(transform.position, hit.collider.gameObject.transform.position, Color.red);
+                            Debug.Log(hit.collider.gameObject.tag);
+
+                            if (hit.collider.gameObject.tag == "wall")
+                            {
+                                //Debug.Log(hit.collider.gameObject.tag + " with height " + hit.collider.gameObject.transform.localScale);
+                            }
                             subList[i] = 1;
                             subList[detectableObjects.Length + 1] = hit.distance / rayDistance;
                             break;

@@ -13,6 +13,8 @@ public class WallJumpAcademy : Academy {
     //when fail, the ground will use this material for a few seconds. 
     public Material failMaterial;
 
+    public float timescale = 0.1f;
+
     [HideInInspector]
     //use ~3 to make things less floaty
 	public float gravityMultiplier = 2.5f; 
