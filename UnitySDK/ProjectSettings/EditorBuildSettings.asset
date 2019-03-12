@@ -5,13 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/ML-Agents/Examples/PushBlock/Scenes/PushBlockMap1.unity
-    guid: ae8cc75939e3e4d07a79c8c6a08b54f4
   - enabled: 1
-    path: Assets/ML-Agents/Examples/PushBlock/Scenes/PushBlockMap3.unity
-    guid: 26234c2817953a84d9370bf84385e770
-  - enabled: 0
-    path: Assets/ML-Agents/Examples/PushBlock/Scenes/PushBlockMap2.unity
-    guid: 56f07e8d5f82b4b439e409c729e1c179
+    path: Assets/ML-Agents/Examples/Soccer/Scenes/SoccerTwos.unity
+    guid: f8055e5dfa04643559678426a82225c1
   m_configObjects: {}
