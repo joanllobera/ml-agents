@@ -8007,7 +8007,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 56695d6905d0f7f4e8de1aa125371cdc, type: 2}
     _brainsToControl:
     - {fileID: 11400000, guid: 96f156f9cbc2c3149bca12de5c42e49b, type: 2}
-    - {fileID: 11400000, guid: 56695d6905d0f7f4e8de1aa125371cdc, type: 2}
   maxSteps: 50000
   trainingConfiguration:
     width: 400
