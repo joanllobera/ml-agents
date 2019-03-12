@@ -13035,8 +13035,7 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: 863b850c770109441ac916a2b2aa06cf, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: 863b850c770109441ac916a2b2aa06cf, type: 2}
+    _brainsToControl: []
   maxSteps: 30000
   trainingConfiguration:
     width: 400

@@ -1560,7 +1560,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d8a7a79c7d0c884479e9ba63aaab26d2, type: 2}
     - {fileID: 11400000, guid: dd48c71ad72405145822627c3e5f8791, type: 2}
     - {fileID: 11400000, guid: 863b850c770109441ac916a2b2aa06cf, type: 2}
-    - {fileID: 11400000, guid: 4787428fac835084799a6a9db4e4ff25, type: 2}
   maxSteps: 30000
   trainingConfiguration:
     width: 400

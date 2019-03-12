@@ -1,0 +1,62 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 23.04.2011 13:22:47
+
+newmtl brick
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\brick.jpg
+	map_Kd C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\brick.jpg
+	map_bump -bm 0.3000 Map__19_Normal Bump.tga
+
+newmtl wall
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\wall.jpg
+	map_Kd C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\wall.jpg
+	map_bump -bm 0.3000 Map__9_Normal Bump.tga
+
+newmtl column
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\column.jpg
+	map_Kd C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\column.jpg
+	map_bump -bm 0.3000 Map__14_Normal Bump.tga
+
+newmtl cement
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\cement.jpg
+	map_Kd C:\Users\Home\Desktop\Brick_Wall_Geo_Piskas\Textures\JPG\cement.jpg
+	map_bump -bm 0.3000 Map__17_Normal Bump.tga
