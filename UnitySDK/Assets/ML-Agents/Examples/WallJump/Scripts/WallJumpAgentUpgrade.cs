@@ -50,7 +50,7 @@ public class WallJumpAgentUpgrade : Agent
         academy = FindObjectOfType<WallJumpAcademy>();
         rayPer = GetComponent<RayPerception>();
         configuration = Random.Range(0, 5);
-        detectableObjects = new string[] { "wall", "goal", "block", "enemy" };
+        detectableObjects = new string[] { "wall", "goal", "block", "stone" };
 
         agentRB = GetComponent<Rigidbody>();
         shortBlockRB = shortBlock.GetComponent<Rigidbody>();
@@ -261,7 +261,7 @@ public class WallJumpAgentUpgrade : Agent
     // Detect when the agent hits the enemy
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("enemy"))
+        if (col.gameObject.CompareTag("stone"))
         {
             Done();
             SetReward(-2f);

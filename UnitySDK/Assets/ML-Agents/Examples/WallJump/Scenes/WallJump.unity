@@ -323,6 +323,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fab0e24454fb0b04e89c28e0e53bbc77,
         type: 2}
+    - target: {fileID: 7486463082200344513, guid: 54e3af627216447f790531de496099f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: stone
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114925928594762506, guid: 54e3af627216447f790531de496099f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54e3af627216447f790531de496099f0, type: 3}

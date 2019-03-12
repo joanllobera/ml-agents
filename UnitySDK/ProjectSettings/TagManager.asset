@@ -27,7 +27,6 @@ TagManager:
   - switchOn
   - stone
   - walkableSurface
-  - enemy
   layers:
   - Default
   - TransparentFX
