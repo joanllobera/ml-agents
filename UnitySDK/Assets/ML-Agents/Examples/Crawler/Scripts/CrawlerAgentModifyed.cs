@@ -204,6 +204,8 @@ public class CrawlerAgentModifyed : Agent
             RewardFunctionTimePenalty();
         }
 
+        CustomRewards();
+
         IncrementDecisionTimer();
     }
 
@@ -233,6 +235,16 @@ public class CrawlerAgentModifyed : Agent
         AddReward(-0.001f);
     }
 
+    void CustomRewards()
+    {
+        //prevent jump
+        AddReward(body.position.y < 3.2 ? 0.01f : -0.01f);
+        AddReward(body.position.y > 2.8 ? 0.01f : -0.01f);
+
+        //Reward straight position
+        AddReward(Vector3.Dot(body.up, Vector3.up) * 0.01f);
+    }
+
     /// <summary>
     /// Loop over body parts and reset them to initial conditions.
     /// </summary>
@@ -247,6 +259,8 @@ public class CrawlerAgentModifyed : Agent
         {
             bodyPart.Reset(bodyPart);
         }
+
+        GetRandomTargetPos();
 
         isNewDecisionStep = true;
         currentDecisionStep = 1;
