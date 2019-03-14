@@ -577,6 +577,8 @@ namespace MLAgents
             BrainParameters param = brain.brainParameters;
             if (info.vectorObservation.Count != param.vectorObservationSize)
             {
+                Debug.Log("Fail with the brain: " + brain.name);
+
                 throw new UnityAgentsException(string.Format(
                     "Vector Observation size mismatch between continuous " +
                     "agent {0} and brain {1}. " +

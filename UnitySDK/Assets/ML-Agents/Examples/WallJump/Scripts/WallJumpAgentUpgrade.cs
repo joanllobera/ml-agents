@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Linq;
 using MLAgents;
 
-public class WallJumpAgent : Agent
+public class WallJumpAgentUpgrade : Agent
 {
     // Depending on this value, the wall will have different height
     int configuration;
@@ -24,6 +24,7 @@ public class WallJumpAgent : Agent
 
     public GameObject goal;
     public GameObject shortBlock;
+    public GameObject enemy;
     public GameObject wall;
     Rigidbody shortBlockRB;
     Rigidbody agentRB;
@@ -49,7 +50,7 @@ public class WallJumpAgent : Agent
         academy = FindObjectOfType<WallJumpAcademy>();
         rayPer = GetComponent<RayPerception>();
         configuration = Random.Range(0, 5);
-        detectableObjects = new string[] { "wall", "goal", "block" };
+        detectableObjects = new string[] { "wall", "goal", "block", "stone" };
 
         agentRB = GetComponent<Rigidbody>();
         shortBlockRB = shortBlock.GetComponent<Rigidbody>();
@@ -251,8 +252,24 @@ public class WallJumpAgent : Agent
             Done();
             SetReward(-1f);
             ResetBlock(shortBlockRB);
+            ResetEnemy(enemy);
             StartCoroutine(
                 GoalScoredSwapGroundMaterial(academy.failMaterial, .5f));
+        }
+    }
+
+    // Detect when the agent hits the enemy
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("stone"))
+        {
+            Done();
+            SetReward(-2f);
+            ResetBlock(shortBlockRB);
+            ResetEnemy(enemy);
+            StartCoroutine(
+                GoalScoredSwapGroundMaterial(academy.failMaterial, .5f));
+            Debug.Log("I have killed the player");
         }
     }
 
@@ -261,7 +278,7 @@ public class WallJumpAgent : Agent
     {
         if (col.gameObject.CompareTag("goal") && DoGroundCheck(true))
         {
-            SetReward(1f);
+            SetReward(2f);
             Done();
             StartCoroutine(
                 GoalScoredSwapGroundMaterial(academy.goalScoredMaterial, 2));
@@ -275,10 +292,16 @@ public class WallJumpAgent : Agent
         blockRB.velocity = Vector3.zero;
         blockRB.angularVelocity = Vector3.zero;
     }
+    
+    //Reset the enemy position
+    void ResetEnemy(GameObject enemy) {
+        enemy.transform.position = new Vector3(0.0f, 1.7f, -5.0f);
+    }
 
     public override void AgentReset()
     {
         ResetBlock(shortBlockRB);
+        ResetEnemy(enemy);
         transform.localPosition = new Vector3(
             18 * (Random.value - 0.5f), 1, -12);
         configuration = Random.Range(0, 5);
@@ -293,7 +316,6 @@ public class WallJumpAgent : Agent
             ConfigureAgent(configuration);
             configuration = -1;
         }
-        
     }
 
     /// <summary>
@@ -306,34 +328,34 @@ public class WallJumpAgent : Agent
     /// Other : Tall wall and BigWallBrain. </param>
     void ConfigureAgent(int config)
     {
-        //if (config == 0)
-        //{
-        //    wall.transform.localScale = new Vector3(
-        //        wall.transform.localScale.x,
-        //        academy.resetParameters["no_wall_height"],
-        //        wall.transform.localScale.z);
-        //    GiveBrain(noWallBrain);
-        //}
-        //else if (config == 1)
-        //{
-        //    wall.transform.localScale = new Vector3(
-        //        wall.transform.localScale.x,
-        //        academy.resetParameters["small_wall_height"],
-        //        wall.transform.localScale.z);
-        //    GiveBrain(smallWallBrain);
-        //}
-        //else
-        //{
-            float height =
-                academy.resetParameters["big_wall_min_height"] +
-                Random.value * (academy.resetParameters["big_wall_max_height"] -
-                academy.resetParameters["big_wall_min_height"]);
+        if (config == 0)
+        {
             wall.transform.localScale = new Vector3(
                 wall.transform.localScale.x,
-                height,
+                academy.resetParameters["no_wall_height"],
                 wall.transform.localScale.z);
-            GiveBrain(bigWallBrain);
-        //}
+            GiveBrain(noWallBrain);
+        }
+        else if (config == 1)
+        {
+            wall.transform.localScale = new Vector3(
+                wall.transform.localScale.x,
+                academy.resetParameters["small_wall_height"],
+                wall.transform.localScale.z);
+            GiveBrain(smallWallBrain);
+        }
+        else
+        {
+            //float height =
+            //    academy.resetParameters["big_wall_min_height"] +
+            //    Random.value * (academy.resetParameters["big_wall_max_height"] -
+            //    academy.resetParameters["big_wall_min_height"]);
+            //wall.transform.localScale = new Vector3(
+            //    wall.transform.localScale.x,
+            //    height,
+            //    wall.transform.localScale.z);
+            //GiveBrain(bigWallBrain);
+        }
     }
 }
 
