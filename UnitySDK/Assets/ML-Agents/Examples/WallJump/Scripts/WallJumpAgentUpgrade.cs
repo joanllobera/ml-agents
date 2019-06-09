@@ -346,15 +346,15 @@ public class WallJumpAgentUpgrade : Agent
         }
         else
         {
-            //float height =
-            //    academy.resetParameters["big_wall_min_height"] +
-            //    Random.value * (academy.resetParameters["big_wall_max_height"] -
-            //    academy.resetParameters["big_wall_min_height"]);
-            //wall.transform.localScale = new Vector3(
-            //    wall.transform.localScale.x,
-            //    height,
-            //    wall.transform.localScale.z);
-            //GiveBrain(bigWallBrain);
+            float height =
+                academy.resetParameters["big_wall_min_height"] +
+                Random.value * (academy.resetParameters["big_wall_max_height"] -
+                academy.resetParameters["big_wall_min_height"]);
+            wall.transform.localScale = new Vector3(
+                wall.transform.localScale.x,
+                height,
+                wall.transform.localScale.z);
+            GiveBrain(bigWallBrain);
         }
     }
 }
