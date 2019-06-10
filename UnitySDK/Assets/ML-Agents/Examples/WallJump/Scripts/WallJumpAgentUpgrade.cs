@@ -33,6 +33,7 @@ public class WallJumpAgentUpgrade : Agent
     WallJumpAcademy academy;
     RayPerception rayPer;
 
+    public bool together = false;
     public float jumpingTime;
     public float jumpTime;
     // This is a downward force applied when falling to make jumps look
@@ -256,6 +257,11 @@ public class WallJumpAgentUpgrade : Agent
             StartCoroutine(
                 GoalScoredSwapGroundMaterial(academy.failMaterial, .5f));
         }
+        if (Mathf.Abs(shortBlock.transform.position.z - wall.transform.position.z) <= 3.0
+            && !together) { // CHANGE IT help the player use the box
+            SetReward(1f);
+            together = true;
+        }
     }
 
     // Detect when the agent hits the enemy
@@ -295,17 +301,21 @@ public class WallJumpAgentUpgrade : Agent
     
     //Reset the enemy position
     void ResetEnemy(GameObject enemy) {
-        enemy.transform.position = new Vector3(0.0f, 1.7f, -5.0f);
+        if (configuration == 2 || configuration == 3) // CHANGE IT from 5 to 6
+            enemy.transform.position = new Vector3(0.0f, -100.0f, -5.0f);
+        else
+            enemy.transform.position = new Vector3(0.0f, 1.5f, -5.0f);
     }
 
     public override void AgentReset()
     {
         ResetBlock(shortBlockRB);
-        ResetEnemy(enemy);
         transform.localPosition = new Vector3(
             18 * (Random.value - 0.5f), 1, -12);
-        configuration = Random.Range(0, 5);
+        configuration = Random.Range(0, 6); // CHANGE IT from 5 to 6
+        ResetEnemy(enemy);
         agentRB.velocity = default(Vector3);
+        together = false;
 
     }
 
