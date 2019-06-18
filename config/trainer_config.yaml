@@ -51,7 +51,7 @@ PushBlockLearning:
     num_layers: 2
 
 SmallWallJumpLearning: 
-    max_steps: 1.0e6
+    max_steps: 5.0e5
     batch_size: 128
     buffer_size: 2048
     beta: 5.0e-3
@@ -62,7 +62,7 @@ SmallWallJumpLearning:
     normalize: false
 
 BigWallJumpLearning: 
-    max_steps: 1.0e6
+    max_steps: 5.0e5
     batch_size: 128
     buffer_size: 2048
     beta: 5.0e-3

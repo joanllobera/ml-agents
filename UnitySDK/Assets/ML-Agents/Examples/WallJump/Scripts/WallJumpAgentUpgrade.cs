@@ -33,6 +33,7 @@ public class WallJumpAgentUpgrade : Agent
     WallJumpAcademy academy;
     RayPerception rayPer;
 
+    public bool together = false;
     public float jumpingTime;
     public float jumpTime;
     // This is a downward force applied when falling to make jumps look
@@ -45,8 +46,7 @@ public class WallJumpAgentUpgrade : Agent
 
     string[] detectableObjects;
 
-    public override void InitializeAgent()
-    {
+    public override void InitializeAgent() {
         academy = FindObjectOfType<WallJumpAcademy>();
         rayPer = GetComponent<RayPerception>();
         configuration = Random.Range(0, 5);
@@ -65,7 +65,6 @@ public class WallJumpAgentUpgrade : Agent
     // Begin the jump sequence
     public void Jump()
     {
-
         jumpingTime = 0.2f;
         jumpStartingPos = agentRB.position;
     }
@@ -131,20 +130,16 @@ public class WallJumpAgentUpgrade : Agent
     /// <param name="targetVel">The velocity to target during the
     ///  motion.</param>
     /// <param name="maxVel">The maximum velocity posible.</param>
-    void MoveTowards(
-        Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel)
-    {
+    void MoveTowards(Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel) {
         Vector3 moveToPos = targetPos - rb.worldCenterOfMass;
         Vector3 velocityTarget = moveToPos * targetVel * Time.fixedDeltaTime;
-        if (float.IsNaN(velocityTarget.x) == false)
-        {
+        if (float.IsNaN(velocityTarget.x) == false) {
             rb.velocity = Vector3.MoveTowards(
                 rb.velocity, velocityTarget, maxVel);
         }
     }
 
-    public override void CollectObservations()
-    {
+    public override void CollectObservations() {
             float rayDistance = 20f;
             float[] rayAngles = { 0f, 45f, 90f, 135f, 180f, 110f, 70f };
             AddVectorObs(rayPer.Perceive(
@@ -161,8 +156,7 @@ public class WallJumpAgentUpgrade : Agent
     /// Gets a random spawn position in the spawningArea.
     /// </summary>
     /// <returns>The random spawn position.</returns>
-    public Vector3 GetRandomSpawnPos()
-    {
+    public Vector3 GetRandomSpawnPos() {
         Vector3 randomSpawnPos = Vector3.zero;
         float randomPosX = Random.Range(-spawnAreaBounds.extents.x,
                                         spawnAreaBounds.extents.x);
@@ -180,17 +174,14 @@ public class WallJumpAgentUpgrade : Agent
     /// <returns>The Enumerator to be used in a Coroutine</returns>
     /// <param name="mat">The material to be swaped.</param>
     /// <param name="time">The time the material will remain.</param>
-    IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time)
-    {
+    IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time) {
         groundRenderer.material = mat;
         yield return new WaitForSeconds(time); //wait for 2 sec
         groundRenderer.material = groundMaterial;
     }
 
 
-    public void MoveAgent(float[] act)
-    {
-
+    public void MoveAgent(float[] act) {
         AddReward(-0.0005f);
         bool smallGrounded = DoGroundCheck(true);
         bool largeGrounded = DoGroundCheck(false);
@@ -215,8 +206,7 @@ public class WallJumpAgentUpgrade : Agent
         else if (dirToGoSideAction==2)
             dirToGo = transform.right * 0.6f * (largeGrounded ? 1f : 0.5f);
         if (jumpAction == 1)
-            if ((jumpingTime <= 0f) && smallGrounded)
-            {
+            if ((jumpingTime <= 0f) && smallGrounded) {
                 Jump();
             }
 
@@ -224,8 +214,7 @@ public class WallJumpAgentUpgrade : Agent
         agentRB.AddForce(dirToGo * academy.agentRunSpeed,
                          ForceMode.VelocityChange);
 
-        if (jumpingTime > 0f)
-        {
+        if (jumpingTime > 0f) {
             jumpTargetPos =
             new Vector3(agentRB.position.x,
                         jumpStartingPos.y + academy.agentJumpHeight,
@@ -235,20 +224,17 @@ public class WallJumpAgentUpgrade : Agent
 
         }
 
-        if (!(jumpingTime > 0f) && !largeGrounded)
-        {
+        if (!(jumpingTime > 0f) && !largeGrounded) {
             agentRB.AddForce(
             Vector3.down * fallingForce, ForceMode.Acceleration);
         }
         jumpingTime -= Time.fixedDeltaTime;
     }
 
-    public override void AgentAction(float[] vectorAction, string textAction)
-    {
+    public override void AgentAction(float[] vectorAction, string textAction) {
         MoveAgent(vectorAction);
         if ((!Physics.Raycast(agentRB.position, Vector3.down, 20))
-            || (!Physics.Raycast(shortBlockRB.position, Vector3.down, 20)))
-        {
+            || (!Physics.Raycast(shortBlockRB.position, Vector3.down, 20))) {
             Done();
             SetReward(-1f);
             ResetBlock(shortBlockRB);
@@ -256,15 +242,17 @@ public class WallJumpAgentUpgrade : Agent
             StartCoroutine(
                 GoalScoredSwapGroundMaterial(academy.failMaterial, .5f));
         }
+        //if (Mathf.Abs(shortBlock.transform.position.z - wall.transform.position.z) <= 3.0 && !together) { // help the player use the box
+        //    AddReward(0.5f);
+        //    together = true;
+        //}
     }
 
     // Detect when the agent hits the enemy
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("stone"))
-        {
+    void OnCollisionEnter(Collision col) {
+        if (col.gameObject.CompareTag("stone")) {
             Done();
-            SetReward(-2f);
+            SetReward(-1f);
             ResetBlock(shortBlockRB);
             ResetEnemy(enemy);
             StartCoroutine(
@@ -274,11 +262,9 @@ public class WallJumpAgentUpgrade : Agent
     }
 
     // Detect when the agent hits the goal
-    void OnTriggerStay(Collider col)
-    {
-        if (col.gameObject.CompareTag("goal") && DoGroundCheck(true))
-        {
-            SetReward(2f);
+    void OnTriggerStay(Collider col) {
+        if (col.gameObject.CompareTag("goal") && DoGroundCheck(true)) {
+            SetReward(1f);
             Done();
             StartCoroutine(
                 GoalScoredSwapGroundMaterial(academy.goalScoredMaterial, 2));
@@ -286,8 +272,7 @@ public class WallJumpAgentUpgrade : Agent
     }
 
     //Reset the orange block position
-    void ResetBlock(Rigidbody blockRB)
-    {
+    void ResetBlock(Rigidbody blockRB) {
         blockRB.transform.position = GetRandomSpawnPos();
         blockRB.velocity = Vector3.zero;
         blockRB.angularVelocity = Vector3.zero;
@@ -295,24 +280,24 @@ public class WallJumpAgentUpgrade : Agent
     
     //Reset the enemy position
     void ResetEnemy(GameObject enemy) {
-        enemy.transform.position = new Vector3(0.0f, 1.7f, -5.0f);
+        if (configuration == 2 || configuration == 3) // CHANGE IT from 5 to 6
+            enemy.transform.localPosition = new Vector3(0.0f, -100.0f, -5.0f);
+        else
+            enemy.transform.localPosition = new Vector3(0.0f, 1.5f, -5.0f);
     }
 
-    public override void AgentReset()
-    {
+    public override void AgentReset() {
         ResetBlock(shortBlockRB);
-        ResetEnemy(enemy);
         transform.localPosition = new Vector3(
             18 * (Random.value - 0.5f), 1, -12);
-        configuration = Random.Range(0, 5);
+        configuration = Random.Range(0, 6); // CHANGE IT from 5 to 6
+        ResetEnemy(enemy); // Reset Enemy
         agentRB.velocity = default(Vector3);
-
+        //together = false;
     }
 
-    private void FixedUpdate()
-    {
-        if (configuration != -1)
-        {
+    private void FixedUpdate() {
+        if (configuration != -1) {
             ConfigureAgent(configuration);
             configuration = -1;
         }
@@ -326,35 +311,31 @@ public class WallJumpAgentUpgrade : Agent
     /// If 0 : No wall and noWallBrain.
     /// If 1:  Small wall and smallWallBrain.
     /// Other : Tall wall and BigWallBrain. </param>
-    void ConfigureAgent(int config)
-    {
-        if (config == 0)
-        {
+    void ConfigureAgent(int config) {
+        if (config == 0) {
             wall.transform.localScale = new Vector3(
                 wall.transform.localScale.x,
                 academy.resetParameters["no_wall_height"],
                 wall.transform.localScale.z);
             GiveBrain(noWallBrain);
         }
-        else if (config == 1)
-        {
+        else if (config == 1) {
             wall.transform.localScale = new Vector3(
                 wall.transform.localScale.x,
                 academy.resetParameters["small_wall_height"],
                 wall.transform.localScale.z);
             GiveBrain(smallWallBrain);
         }
-        else
-        {
-            //float height =
-            //    academy.resetParameters["big_wall_min_height"] +
-            //    Random.value * (academy.resetParameters["big_wall_max_height"] -
-            //    academy.resetParameters["big_wall_min_height"]);
-            //wall.transform.localScale = new Vector3(
-            //    wall.transform.localScale.x,
-            //    height,
-            //    wall.transform.localScale.z);
-            //GiveBrain(bigWallBrain);
+        else {
+            float height =
+                academy.resetParameters["big_wall_min_height"] +
+                Random.value * (academy.resetParameters["big_wall_max_height"] -
+                academy.resetParameters["big_wall_min_height"]);
+            wall.transform.localScale = new Vector3(
+                wall.transform.localScale.x,
+                height,
+                wall.transform.localScale.z);
+            GiveBrain(bigWallBrain);
         }
     }
 }

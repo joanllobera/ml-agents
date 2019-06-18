@@ -306,24 +306,24 @@ public class WallJumpAgent : Agent
     /// Other : Tall wall and BigWallBrain. </param>
     void ConfigureAgent(int config)
     {
-        //if (config == 0)
-        //{
-        //    wall.transform.localScale = new Vector3(
-        //        wall.transform.localScale.x,
-        //        academy.resetParameters["no_wall_height"],
-        //        wall.transform.localScale.z);
-        //    GiveBrain(noWallBrain);
-        //}
-        //else if (config == 1)
-        //{
-        //    wall.transform.localScale = new Vector3(
-        //        wall.transform.localScale.x,
-        //        academy.resetParameters["small_wall_height"],
-        //        wall.transform.localScale.z);
-        //    GiveBrain(smallWallBrain);
-        //}
-        //else
-        //{
+        if (config == 0)
+        {
+            wall.transform.localScale = new Vector3(
+                wall.transform.localScale.x,
+                academy.resetParameters["no_wall_height"],
+                wall.transform.localScale.z);
+            GiveBrain(noWallBrain);
+        }
+        else if (config == 1)
+        {
+            wall.transform.localScale = new Vector3(
+                wall.transform.localScale.x,
+                academy.resetParameters["small_wall_height"],
+                wall.transform.localScale.z);
+            GiveBrain(smallWallBrain);
+        }
+        else
+        {
             float height =
                 academy.resetParameters["big_wall_min_height"] +
                 Random.value * (academy.resetParameters["big_wall_max_height"] -
@@ -333,7 +333,7 @@ public class WallJumpAgent : Agent
                 height,
                 wall.transform.localScale.z);
             GiveBrain(bigWallBrain);
-        //}
+        }
     }
 }
 
